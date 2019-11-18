@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ConstructionSystem.Models.Entities.Service>
+
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ServiceName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Payment)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServiceName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Payment)
+        </td>
+        <td>
+            @Ajax.ActionLink("Edit", "Edit", new { id = item.ServiceID }, new AjaxOptions { HttpMethod = "get", InsertionMode = InsertionMode.Replace, UpdateTargetId = "Edit", OnSuccess = "myfun1()" }) |
+            @Ajax.ActionLink("Details", "Details", new { id = item.ServiceID }, new AjaxOptions { HttpMethod = "get", InsertionMode = InsertionMode.Replace, UpdateTargetId = "details", OnSuccess = "myfun2()" }) |
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.ServiceID })*@
+            @Ajax.ActionLink("Delete","Delete", new { id = item.ServiceID }, new AjaxOptions { HttpMethod = "get", InsertionMode = InsertionMode.Replace, UpdateTargetId = "ser" , OnSuccess = "myfun3()" } )
+        </td>
+    </tr>
+}
+
+</table>
