@@ -26,7 +26,7 @@ namespace ConstructionSystem.Models.Entities
 
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
-
+        
         [DataType(DataType.Date)]
         [Display(Name = "Start Date")]
         public DateTime StartDate { get; set; }

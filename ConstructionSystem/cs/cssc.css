@@ -1,0 +1,434 @@
+﻿/*Contact sectiom*/
+.content-header {
+    font-family: 'Oleo Script', cursive;
+    color: #fcc500;
+    font-size: 45px;
+}
+
+.section-content {
+    text-align: center;
+}
+
+#contact {
+    font-family:SimSun;
+    padding-top: 60px;
+    width: 100%;
+    width: 100vw;
+    height: 550px;
+  
+    color: #080808;
+    background-color: snow !important;
+}
+.btn-dark {
+    border-radius: 15px;
+    color: burlywood;
+    background-color:black;
+    padding:10px;
+}
+
+    .btn-dark:hover {
+        border-radius: 15px;
+        color: black;
+        background-image: linear-gradient(to right,#554a4a,burlywood);
+    }
+
+body {
+    background-color: snow !important;
+}
+.contact-section {
+    padding-top: 40px;
+}
+
+    .contact-section .col-md-6 {
+        width: 50%;
+    }
+
+.form-line {
+    border-right: 1px solid  burlywood;
+}
+
+.form-group {
+    margin-top: 10px;
+}
+.content-header{
+    color:burlywood !important;
+}
+label {
+    font-size: 1.3em;
+    line-height: 1em;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+.form-control {
+    font-size: 1.3em;
+    color: #080808;
+    margin-bottom:20px;
+}
+
+textarea.form-control {
+    height: 135px;
+    /* margin-top: px;*/
+}
+
+.submit {
+    font-size: 1.1em;
+    float: right;
+    width: 150px;
+   
+}
+.mapiframe{
+    width:100%;
+    height:100%;
+    border:0;
+}
+.iconstyle{
+    font-size:28px;
+    color:burlywood;
+    transform:translateX(20px);
+    
+}
+    .iconstyle:hover{
+        color:black;
+    }
+.login-block{
+    margin-top:5%;
+}
+.form-control {
+    width: 85% !important;
+    margin-bottom: 9px !important;
+    margin-left: 7% !important;
+    margin-top: 3% !important;
+    border: 1px solid #100f0f !important;
+}
+.contactheader  .text-primary {
+    color: burlywood !important;
+}
+    .btn-block {
+    display: block;
+    width: 85% !important;
+    margin-left: 7% !important;
+    margin-bottom: 4% !important;
+    margin-top: 2% !important;
+}
+.contactheader {
+    margin-top: 3%;
+}
+.card-header {
+    background-color: black;
+    color: #ca9f7f !important;
+}
+.card-body {
+    background-color: rgb(17, 17, 17) !important;
+    color: #f6c5b3;
+}
+
+textcenter {
+    display: inline-block;
+}
+.bg-dark {
+    background-color: black;
+    color: burlywood;
+}
+.textcenter {
+    margin-bottom: 1%;
+    margin-left: 3%;
+}
+/*----------------------------------------------------------------------------
+team
+-----------------------------------------*/
+body {
+    background: #e8cbc0;
+    background: -webkit-linear-gradient(to right, #e8cbc0, #636fa4);
+    background: linear-gradient(to right, #e8cbc0, #636fa4);
+    min-height: 100vh;
+    max-width:100% !important;
+}
+body div .container-fluid {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+.social-link {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    border-radius: 50%;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+    .social-link:hover, .social-link:focus {
+        background: #ddd;
+        text-decoration: none;
+        color: #555;
+    }
+.colr {
+    width :150px    
+}
+.hs {
+    margin-top: 5%;
+}
+.col-xl-6 {
+    margin-bottom: 2%;
+}
+.spantext{
+    margin-top:2%;
+}
+.icmargright{
+    margin-right:1%;
+}
+.bannar {
+    padding: 0 !important;
+}
+
+    .teamdiv:hover {
+        transform: scale(1.05);
+        box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    }
+
+
+
+.teamdiv::before,
+.teamdiv::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: scale3d(0, 0, 1);
+    transition: transform .3s ease-out 0s;
+    background: rgba(255, 255, 255, 0.1);
+    content: '';
+    pointer-events: none;
+}
+
+.teamdiv::before {
+    transform-origin: left top;
+}
+.teamdiv::after {
+    transform-origin: right bottom;
+}
+
+.teamdiv:hover::before,
+.teamdiv:hover::after,
+.teamdiv:focus::before,
+.teamdiv:focus::after {
+    transform: scale3d(1, 1, 1);
+}
+.bg-color{
+    background-color:#e8e1bb !important;
+}
+
+/*----------------------------------------------------------------------------
+pricing
+-----------------------------------------*/
+/*--------- Font ------------*/
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans);
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+/* fontawesome */
+[class*="fontawesome-"]:before {
+    font-family: 'FontAwesome', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*------ utiltity classes -----*/
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+/*its also known as clearfix*/
+.group:before,
+.group:after {
+    content: "";
+    display: table;
+}
+
+.group:after {
+    clear: both;
+}
+
+.group {
+    zoom: 1; /*For IE 6/7 (trigger hasLayout) */
+}
+
+body {
+    background: snow;
+    font-family: 'Droid Sans', sans-serif;
+    line-height: 1;
+    font-size: 16px;
+}
+
+.wrapper {
+}
+
+.pricing-table {
+    width: 80%;
+    margin: 50px auto;
+    text-align: center;
+    padding: 10px;
+    padding-right: 0;
+}
+
+    .pricing-table .heading {
+        color: #9C9E9F;
+        text-transform: uppercase;
+        font-size: 1.3rem;
+        margin-bottom: 4rem;
+    }
+
+.block {
+    width: 30%;
+    margin: 0 15px;
+    overflow: hidden;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    /*    border: 1px solid red;*/
+}
+/*Shared properties*/
+.title, .pt-footer {
+    color: #FEFEFE;
+    text-transform: capitalize;
+    line-height: 2.5;
+    position: relative;
+}
+
+.content {
+    position: relative;
+    color: #FEFEFE;
+    padding: 20px 0 10px 0;
+}
+    /*arrow creation*/
+    .content:after, .content:before, .pt-footer:before, .pt-footer:after {
+        top: 100%;
+        left: 50%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+
+.pt-footer:after, .pt-footer:before {
+    top: 0;
+}
+
+.content:after, .pt-footer:after {
+    border-color: rgba(136, 183, 213, 0);
+    border-width: 5px;
+    margin-left: -5px;
+}
+/*/arrow creation*/
+.price {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 0.625rem;
+}
+
+    .price span {
+        font-size: 6rem;
+        letter-spacing: 8px;
+        font-weight: bold;
+    }
+
+    .price sup {
+        font-size: 1.5rem;
+        position: absolute;
+        top: 12px;
+        left: -12px;
+    }
+
+.hint {
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.features {
+    list-style-type: none;
+    background: #FFFFFF;
+    text-align: left;
+    color: #9C9C9C;
+    padding: 30px 22%;
+    font-size: 0.9rem;
+}
+
+    .features li {
+        padding: 15px 0;
+        width: 100%;
+    }
+
+        .features li span {
+            padding-right: 0.4rem;
+        }
+
+.pt-footer {
+    font-size: 0.95rem;
+    text-transform: capitalize;
+}
+/*PERSONAL*/
+.personal .title {
+    background: #78CFBF;
+}
+
+.personal .content, .personal .pt-footer {
+    background: #82DACA;
+}
+
+    .personal .content:after {
+        border-top-color: #82DACA;
+    }
+
+    .personal .pt-footer:after {
+        border-top-color: #FFFFFF;
+    }
+/*PROFESSIONAL*/
+.professional .title {
+    background: #3EC6E0;
+}
+
+.professional .content, .professional .pt-footer {
+    background: #53CFE9;
+}
+
+    .professional .content:after {
+        border-top-color: #53CFE9;
+    }
+
+    .professional .pt-footer:after {
+        border-top-color: #FFFFFF;
+    }
+/*BUSINESS*/
+.business .title {
+    background: #E3536C;
+}
+
+.business .content, .business .pt-footer {
+    background: #EB6379;
+}
+
+    .business .content:after {
+        border-top-color: #EB6379;
+    }
+
+    .business .pt-footer:after {
+        border-top-color: #FFFFFF;
+    }
+

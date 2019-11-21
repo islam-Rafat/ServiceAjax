@@ -1,0 +1,29 @@
+﻿@model ConstructionSystem.Models.Entities.ProjectService
+@{
+    Layout = null;
+    ViewBag.Title = "AssignServicToProject";
+}
+<head>
+    <link href="~/cs/project_css.css" rel="stylesheet" />
+    <link href="~/library/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <h2>AssignServicToProject</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div>
+            @Html.DropDownListFor(x => x.ProjectID, ViewBag.proj_list as SelectList, "select project", htmlAttributes: new { @class = "form-control" })
+
+        </div>
+        <div>
+            @Html.DropDownListFor(x => x.ServiceID, ViewBag.serv_list as SelectList, "select services", htmlAttributes: new { @class = "form-control" })
+        </div>
+        <div class="form-actions no-color">
+            <input type="submit" value="Create" class="btn btn-dark" />
+            @Html.ActionLink("Back", "Project_Details", null, new { @class = "btn btn-dark" })
+        </div>
+    }
+</body>
+

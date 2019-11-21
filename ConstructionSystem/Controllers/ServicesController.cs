@@ -64,6 +64,8 @@ namespace ConstructionSystem.Controllers
             return PartialView("GetAll" , db.Services.ToList());
         }
 
+       
+
         // GET: Services/Details/5
         //public ActionResult Details(int? id)
         //{

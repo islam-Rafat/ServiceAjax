@@ -1,6 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "Index";
+    
 }
 
 <h2>Index</h2>
@@ -91,6 +92,8 @@
     <script>
         function myfun() {
             $("#AddService").modal("toggle")
+            location.reload(true);
+            
         }
         function myfun1() {
             $("#EditService").modal("toggle")
@@ -98,9 +101,7 @@
         function myfun2() {
             $("#DetailsService").modal("toggle")
         }
-        function myfun3() {
-            return confirm("Are you sure! ")
-        }
+        
     </script>
 }
 

@@ -1,0 +1,152 @@
+﻿@model ConstructionSystem.Models.Entities.Project
+
+@{
+    
+    ViewBag.Title = "Edit_Project";
+}
+
+<html>
+<head>
+    <title>Sign Up</title>
+    <meta charset="UTF-8" />
+    <!---------------------------------------------------------------------------------------------->
+    <link rel="stylesheet" type="text/css" href="~/library/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="~/library/material-design-iconic-font.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/library/bootstrap.min.css" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <!---------------------------------------------------------------------------------------------->
+    <link href="~/library/nouislider.min.css" rel="stylesheet" />
+    <!--Main CSS-->
+    <link href="~/cs/css.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-5 col-sm-4 right"></div>
+                <div class="col-lg-7 col-sm-8 left">
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col-lg-6 col-sm-8">
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                <span class="login-form-title">
+                                    Edit Project
+                                </span>
+
+                                <div >
+                                    
+                                   @Html.HiddenFor(model => model.ProjectId)
+                                    </div>
+
+
+
+                                    <div class="form-horizontal">
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                        <div class="form-group inp-div validate-input sd">
+                                            <span class="label-input100">Project Name</span>
+                                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control input100p form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        <div class="form-group inp-div validate-input sd">
+                                            <span class="label-input100">Project Location</span>
+                                            @Html.EditorFor(model => model.Location, new { htmlAttributes = new { @class = "form-control input100p form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        <div class="form-group inp-div validate-input sd">
+                                            <span class="label-input100">Project Description</span>
+                                            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control input100p form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        <div class="form-group inp-div validate-input sd">
+                                            <span class="label-input100">Start Date</span>
+                                            @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control input100p form-control" } })
+                                            @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        <div class="form-group inp-div validate-input sd">
+                                            <span class="label-input100">Expected Period</span>
+                                            @Html.EditorFor(model => model.ExpectedPeriod, new { htmlAttributes = new { @class = "form-control input100p form-control" } })
+                                            @Html.ValidationMessageFor(model => model.ExpectedPeriod, "", new { @class = "text-danger" })
+                                            <span class="focus-input100"></span>
+                                        </div>
+
+                                        <div class="form-group container-login100-form-btn bt">
+                                            <div class=" wrap-login100-form-btn">
+
+                                                <input type="submit" value="Edit" class="login100-form-btn" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    }
+
+                                    <div>
+                                        @Html.ActionLink("Back to List", "Project_Details")
+                                    </div>
+                                </div>
+                                <div class="col"></div>
+                            </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <script>
+
+        $(document).ready(function () {
+            $(document).on('change', '.btn-file :file', function () {
+                var input = $(this),
+                    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+                input.trigger('fileselect', [label]);
+            });
+
+            $('.btn-file :file').on('fileselect', function (event, label) {
+
+                var input = $(this).parents('.input-group').find(':text'),
+                    log = label;
+
+                if (input.length) {
+                    input.val(log);
+                } else {
+                    if (log) alert(log);
+                }
+
+            });
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#img-upload').attr('src', e.target.result);
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            $("#imgInp").change(function () {
+                readURL(this);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

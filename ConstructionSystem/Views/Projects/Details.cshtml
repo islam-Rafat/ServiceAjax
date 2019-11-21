@@ -1,0 +1,73 @@
+﻿@model ConstructionSystem.Models.Entities.Project
+
+@{
+    Layout = null;
+    ViewBag.Title = "Details";
+}
+<link href="~/cs/project_css.css" rel="stylesheet" />
+<link href="~/library/bootstrap.min.css" rel="stylesheet"/>
+<body>
+    <h2>Details</h2>
+    <div class="container">
+        <div class="row">
+           
+            <dl class="dl-horizontal col-lg-7 col-sm-8 left con" >
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Location)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Location)
+                </dd>
+
+                @*<dt>
+                        @Html.DisplayNameFor(model => model.Image)
+                    </dt>
+
+                    <dd>
+                        <img style="width:100px;height:100px" src="~/images/@Model.Image" />
+                        @Html.DisplayFor(model => model.Image)
+                    </dd>*@
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Description)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.StartDate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.StartDate)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.ExpectedPeriod)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.ExpectedPeriod)
+                </dd>
+                <dt>
+                    @Html.ActionLink("Edit", "Edit_Project", new { id = Model.ProjectId } ,new {@class="btn btn-dark"}) 
+                    @Html.ActionLink("Back to List", "Project_Details",null,new {@class="btn btn-dark"})
+                </dt>
+            </dl>
+        </div>
+        <p>
+            
+        </p>
+    </div>
+</body>

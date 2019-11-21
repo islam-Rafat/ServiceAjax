@@ -1,0 +1,137 @@
+﻿@model IEnumerable<ConstructionSystem.Models.Entities.Project>
+
+@{
+    Layout = null;
+    //ViewBag.Title = "Project_Details";
+}
+
+<head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <link href="~/cs/project_css.css" rel="stylesheet" />
+        <link href="~/library/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="~/library/bootstrap.min.css" rel="stylesheet" />
+    </head>
+
+@*<h2>Project_Details</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create_Ptoject")
+    </p>*@
+<body>
+    <div class="container-fluide">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2 class="allEmp"><b>Projects</b></h2>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="active-purple-3 active-purple-4 mb-4">
+                            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                        </div>
+
+                        @Html.ActionLink("Add New Project", "Create_Ptoject", "Projects", null, new { @class = "btn btn-dark", id = "Add" })
+                        @*@Html.ActionLink("Delete Project", "Delete_Project", "Projects", null, new { @class = "btn btn-dark", id = "Delete" })*@
+                        @Html.ActionLink("Add Servic", "AssignServicToProject", "Projects",null, new { @class = "btn btn-dark", id = "Addservice" })
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                      
+                        
+                        <th>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Location)
+                        </th>
+
+                        <th>
+                            @Html.DisplayNameFor(model => model.Description)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.StartDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ExpectedPeriod)
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr id="@item.ProjectId">
+                       
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Location)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.StartDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ExpectedPeriod)
+
+                            </td>
+                            <td>
+                                @Ajax.ActionLink(" ", "Details", "Projects", new { id = item.ProjectId }, new AjaxOptions { HttpMethod = "get", InsertionMode = InsertionMode.Replace, UpdateTargetId = "Details" }, new { @class = "view myDetailsId" })
+                                @Ajax.ActionLink(" ", "Edit_Project", "Projects", new { id = item.ProjectId }, new AjaxOptions { HttpMethod = "get", InsertionMode = InsertionMode.Replace, UpdateTargetId = "Details" }, new { @class = "edit myEditId" })
+                                @*@Ajax.ActionLink(" ", "Delete_Project", "Projects", new { id = item.ProjectId }, new AjaxOptions { HttpMethod = "get", InsertionMode = InsertionMode.Replace, UpdateTargetId = "Details", OnSuccess = "fun1()" }, new { @class = "delete myDeleteId" })*@
+                                <a class="delete" onclick="onDeleteProject(@item.ProjectId)"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                             
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+
+    <script>
+        $(".myDetailsId").prepend("<i class='material-icons'>&#xE417;</i>");
+        $(".myEditId").append("<i class='material-icons' data-toggle='tooltip' title='Edit'>&#xE254;</i>");
+        $(".myDeleteId").append("<i class='material-icons' data-toggle='tooltip' title=Delete'>&#xE872;</i>");
+        $("#Add").append("<i class='material-icons'>&#xE147;</i>");
+        $("#Addservice").append("<i class='material-icons'>&#xE147;</i>");
+        $("#Delete").append("<i class='material-icons'>&#xE15C;</i>");
+        function onDeleteProject(id) {
+            let res = confirm("Are you sure?");
+            if (res) {
+                $.ajax({
+                    url: `/Projects/Delete/${id} `,
+                    type: "GET",
+                    success: function (res) {
+                        if (res) {
+                            $("#" + id).remove();
+                        } else {
+                            alert("Invalied")
+                        }
+                    },
+                    error: function (xhr, s, err) {
+                        alert(err);
+                    }
+                });
+            }
+        }
+
+    </script>
